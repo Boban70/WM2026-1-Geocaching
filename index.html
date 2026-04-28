@@ -1,12 +1,33 @@
-let loesungen = {
-  "hut": 5,
-  "baum": 12,
-  "cache": 42
-};
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Geocache Checker</title>
+</head>
+<body>
 
-if (wort in loesungen) {
-  document.getElementById("ergebnis").innerText =
-    "Richtig! Dein Wert ist: " + loesungen[wort];
-} else {
-  document.getElementById("ergebnis").innerText = "Nicht richtig!";
+<h2>Gib dein Lösungswort ein</h2>
+
+<input type="text" id="wort" placeholder="Wort eingeben">
+<button onclick="check()">Prüfen</button>
+
+<p id="ergebnis"></p>
+
+<script>
+function check() {
+  let wort = document.getElementById("wort").value.toLowerCase();
+
+  if (wort === "hut") {
+    document.getElementById("ergebnis").innerText = "Richtig! Dein Wert ist: 5";
+  } 
+  else if (wort === "baum") {
+    document.getElementById("ergebnis").innerText = "Richtig! Dein Wert ist: 12";
+  }
+  else {
+    document.getElementById("ergebnis").innerText = "Nicht richtig!";
+  }
 }
+</script>
+
+</body>
+</html>
