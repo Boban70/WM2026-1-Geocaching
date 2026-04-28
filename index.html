@@ -1,0 +1,12 @@
+let loesungen = {
+  "hut": 5,
+  "baum": 12,
+  "cache": 42
+};
+
+if (wort in loesungen) {
+  document.getElementById("ergebnis").innerText =
+    "Richtig! Dein Wert ist: " + loesungen[wort];
+} else {
+  document.getElementById("ergebnis").innerText = "Nicht richtig!";
+}
