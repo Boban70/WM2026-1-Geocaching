@@ -6,8 +6,24 @@
 </head>
 <body>
 
-<h2>Gib dein Lösungswort ein</h2>
+<h2>Geocache Checker</h2>
 
+<!-- 🔽 Dropdown -->
+<label>Station wählen:</label>
+<select id="station">
+  <option value="A">Station A</option>
+  <option value="B">Station B</option>
+  <option value="C">Station C</option>
+  <option value="D">Station D</option>
+  <option value="E">Station E</option>
+  <option value="F">Station F</option>
+  <option value="G">Station G</option>
+  <option value="H">Station H</option>
+</select>
+
+<br><br>
+
+<!-- 🔤 Eingabe -->
 <input type="text" id="wort" placeholder="Wort eingeben">
 <button onclick="check()">Prüfen</button>
 
@@ -15,27 +31,28 @@
 
 <script>
 function check() {
-  let wort = document.getElementById("wort").value.toLowerCase();
+  let wort = document.getElementById("wort").value
+    .toLowerCase()
+    .trim();
 
-  if (wort === "schild") {
-    document.getElementById("ergebnis").innerText = "Richtig! Dein Wert ist: 12";
-  } 
-  else if (wort === "hard rock") {
-    document.getElementById("ergebnis").innerText = "Richtig! Dein Wert ist: 12";
-  } 
-  else if (wort === "hard rock cafe") {
-    document.getElementById("ergebnis").innerText = "Richtig! Dein Wert ist: 12";
-  } 
-  else if (wort === "logo") {
-    document.getElementById("ergebnis").innerText = "Richtig! Dein Wert ist: 12";  
-  } 
-  else if (wort === "werbung") {
-    document.getElementById("ergebnis").innerText = "Richtig! Dein Wert ist: 12"; 
-  } 
-  else if (wort === "sponsor") {
-    document.getElementById("ergebnis").innerText = "Richtig! Dein Wert ist: 12";   
-  }
-  else {
+  let station = document.getElementById("station").value;
+
+  // 🔥 Lösungen pro Station
+  let loesungen = {
+    "A": { "hut": 5 },
+    "B": { "baum": 12 },
+    "C": { "cache": 42 },
+    "D": { "wasser": 7 },
+    "E": { "feuer": 9 },
+    "F": { "erde": 3 },
+    "G": { "luft": 8 },
+    "H": { "ziel": 99 }
+  };
+
+  if (station in loesungen && wort in loesungen[station]) {
+    document.getElementById("ergebnis").innerText =
+      "Richtig! Dein Wert ist: " + loesungen[station][wort];
+  } else {
     document.getElementById("ergebnis").innerText = "Nicht richtig!";
   }
 }
