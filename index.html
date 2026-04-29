@@ -2,23 +2,23 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Geocache Checker</title>
+  <title>WM2026-#1 Checker</title>
 </head>
 <body>
 
-<h2>Geocache Checker</h2>
+<h2>WM2026-#1 Checker</h2>
 
 <!-- 🔽 Dropdown -->
 <label>Station wählen:</label>
 <select id="station">
-  <option value="A">Station A</option>
-  <option value="B">Station B</option>
-  <option value="C">Station C</option>
-  <option value="D">Station D</option>
-  <option value="E">Station E</option>
-  <option value="F">Station F</option>
-  <option value="G">Station G</option>
-  <option value="H">Station H</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="D">D</option>
+  <option value="E">E</option>
+  <option value="F">F</option>
+  <option value="G">G</option>
+  <option value="H">H</option>
 </select>
 
 <br><br>
@@ -51,7 +51,7 @@ function check() {
 
   if (station in loesungen && wort in loesungen[station]) {
     document.getElementById("ergebnis").innerText =
-      "Richtig! Dein Wert ist: " + loesungen[station][wort];
+      "Station " + station + ": Richtig! Dein Wert ist: " + loesungen[station][wort];
   } else {
     document.getElementById("ergebnis").innerText = "Nicht richtig!";
   }
