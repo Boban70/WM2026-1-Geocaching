@@ -59,7 +59,7 @@
   
 <h2>WM2026 #1 Checker</h2>
 
-<!-- 🔽 Dropdown -->
+<!-- Dropdown -->
 <label>Station wählen:</label>
 <select id="station">
   <option value="A">A</option>
@@ -74,7 +74,7 @@
 
 <br><br>
 
-<!-- 🔤 Eingabe -->
+<!-- Eingabe -->
 <input type="text" id="wort" placeholder="Wort eingeben">
 <button onclick="check()">Prüfen</button>
 
@@ -88,7 +88,7 @@ function check() {
 
   let station = document.getElementById("station").value;
 
-  // 🔥 Lösungen pro Station
+  //  Lösungen pro Station
   let loesungen = {
     "A": { "schild": 2,
           "sponsor": 2,
@@ -146,8 +146,10 @@ function check() {
   if (station in loesungen && wort in loesungen[station]) {
     document.getElementById("ergebnis").innerText =
       "Station " + station + ": Richtig! Dein Wert ist: " + loesungen[station][wort];
+      output.style.color = "green";
   } else {
     document.getElementById("ergebnis").innerText = "Nicht richtig!";
+    output.style.color = "red";
   }
 }
 </script>
